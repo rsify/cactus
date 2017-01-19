@@ -1,0 +1,8 @@
+{
+  "name": "cactus",
+  "description": "simple teamspeak bot",
+  "author": "nikersify",
+  "devDependencies": {
+    "tape": "^4.6.3"
+  }
+}
