@@ -1,7 +1,16 @@
 const repl = require('repl')
 
-const Cactus = require('./lib/cactus')
+const Cactus = require('./lib/Cactus')
 
-let bot = new Cactus().start()
+let bot = new Cactus()
 
-bot.send('use 1', Cactus.log)
+bot.events.on('ready', () => {
+	bot.send('sendtextmessage', {
+		target: 2,
+		targetmode: 1,
+		msg: "hello world"
+	}, (res) => {
+		console.log(res)
+	})
+})
+
