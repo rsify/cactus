@@ -1,5 +1,3 @@
-const repl = require('repl')
-
 const Cactus = require('./lib/Cactus')
 
 let bot = new Cactus()
@@ -14,3 +12,8 @@ bot.on('ready', () => {
 	})
 })
 
+process.stdin.on('readable', () => {
+	let chunk = process.stdin.read()
+	if (chunk !== null)
+		bot.raw(chunk)
+})
