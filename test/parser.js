@@ -5,16 +5,16 @@ const builder = require('../lib/builder')
 test('parser', (t) => {
 	let out, input, err = {id: '0', msg: 'ok'}
 
-	input = parser('error id=0 msg=0')
+	input = parser('error id=0 msg=0\n\r')
 	out = {
 		err: {
 			id: '0',
 			msg: '0'
 		}
 	}
-	t.deepEqual(input, out, 'error info only') 
+	t.deepEqual(input, out, 'error info only')
 
-	input = parser('version=3.0.0-alpha4 build=9155 platform=Linux\nerror id=0 msg=ok')
+	input = parser('version=3.0.0-alpha4 build=9155 platform=Linux\n\rerror id=0 msg=ok\n\r')
 	out = {
 		err: err,
 		body: {
@@ -24,8 +24,8 @@ test('parser', (t) => {
 		}
 	}
 	t.deepEqual(input, out, 'body with properties')
-	
-	input = parser('cid=1 pid=0 channel_name=default|cid=2 pid=0 channel_name=other\nerror id=0 msg=ok') 
+
+	input = parser('cid=1 pid=0 channel_name=default|cid=2 pid=0 channel_name=other\n\rerror id=0 msg=ok\n\r')
 	out = {
 		err: err,
 		body: [
@@ -43,7 +43,7 @@ test('parser', (t) => {
 	}
 	t.deepEqual(input, out, 'array of properties')
 
-	input = parser('channel_name=lorem\\\\ipsum\\\/de\\samore\\tmi\\nsenore\nerror id=0 msg=ok')
+	input = parser('channel_name=lorem\\\\ipsum\\\/de\\samore\\tmi\\nsenore\n\rerror id=0 msg=ok\n\r')
 	out = {
 		err: err,
 		body: {
