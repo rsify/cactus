@@ -15,5 +15,7 @@ bot.on('ready', () => {
 process.stdin.on('readable', () => {
 	let chunk = process.stdin.read()
 	if (chunk !== null)
-		bot.raw(chunk)
+		bot.raw(chunk, (res) => {
+			console.log(res)
+		})
 })
