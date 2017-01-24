@@ -5,8 +5,10 @@ const builder = require('../lib/builder')
 test('parser', (t) => {
 	let out, input, err = {id: '0', msg: 'ok'}
 
-	input = parser('error id=0 msg=0\n\r')
+	string = 'error id=0 msg=0\n\r'
+	input = parser(string)
 	out = {
+		raw: string,
 		err: {
 			id: '0',
 			msg: '0'
@@ -14,8 +16,10 @@ test('parser', (t) => {
 	}
 	t.deepEqual(input, out, 'error info only')
 
-	input = parser('version=3.0.0-alpha4 build=9155 platform=Linux\n\rerror id=0 msg=ok\n\r')
+	string = 'version=3.0.0-alpha4 build=9155 platform=Linux\n\rerror id=0 msg=ok\n\r'
+	input = parser(string)
 	out = {
+		raw: string,
 		err: err,
 		body: {
 			version: '3.0.0-alpha4',
@@ -25,8 +29,10 @@ test('parser', (t) => {
 	}
 	t.deepEqual(input, out, 'body with properties')
 
-	input = parser('cid=1 pid=0 channel_name=default|cid=2 pid=0 channel_name=other\n\rerror id=0 msg=ok\n\r')
+	string = 'cid=1 pid=0 channel_name=default|cid=2 pid=0 channel_name=other\n\rerror id=0 msg=ok\n\r'
+	input = parser(string)
 	out = {
+		raw: string,
 		err: err,
 		body: [
 			{
@@ -43,8 +49,10 @@ test('parser', (t) => {
 	}
 	t.deepEqual(input, out, 'array of properties')
 
-	input = parser('channel_name=lorem\\\\ipsum\\\/de\\samore\\tmi\\nsenore\n\rerror id=0 msg=ok\n\r')
+	string = 'channel_name=lorem\\\\ipsum\\\/de\\samore\\tmi\\nsenore\n\rerror id=0 msg=ok\n\r'
+	input = parser(string)
 	out = {
+		raw: string,
 		err: err,
 		body: {
 			channel_name: "lorem\\ipsum\/de amore	mi\nsenore"
