@@ -1,4 +1,4 @@
-#### this is a work in progress and is kept as a reference for myself
+#### library is still a work in progress
 
 # cactus
 
@@ -7,9 +7,9 @@ helper library for the TeamSpeak 3 [ServerQuery](http://media.teamspeak.com/ts3_
 # example
 
 ```javascript
-const Cactus = require('./lib/Cactus')
+const Cactus = require('cactus-ts')
 
-let bot = new Cactus()
+let bot = new Cactus('hunter1')
 
 bot.on('ready', () => {
 	bot.send('sendtextmessage', {
@@ -35,7 +35,9 @@ bot.on('ready', () => {
 
 ## getting started
 
-### `new Cactus(password / [options])`, extends `EventEmitter`
+### `new Cactus(password || options)`
+
+Returns a new instance of `Cactus` and will try to connect to a server, provided that `opts.connect` isn't set to `false`.
 
 #### `options`
 
@@ -43,6 +45,8 @@ bot.on('ready', () => {
 - `opts.login` (default `serveradmin`)
 - `opts.ip` (default `localhost`) - ip to which the client will try to connect to
 - `opts.port` (default `10011`) - same as above
+- `opts.server_number` (default 1) - sets the server index for the `use x` command, leave as default if you don't know what that is
+- `opts.connect` (default `true`) - determines whether the bot should attempt connecting immediately
 - `opts.display_name` (default `Cactus`) - the name that the bot will appear as
 
 ## events
@@ -55,6 +59,9 @@ Probably the only one you'll ever need, gets emitted when all the boring stuff i
 Emitted when the server sends out its welcome message, 
 
 # methods
+
+### `.connect([ip, [port]])`
+Use this if you have `opts.connect` set to `false`. Attempts to connect to a server at the given address.
 
 ### `.send(command, [[[parameters, [[options, [callback])` *-> cb(res)*
 
