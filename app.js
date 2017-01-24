@@ -1,6 +1,6 @@
 const Cactus = require('./lib/Cactus')
 
-let bot = new Cactus()
+let bot = new Cactus('pIqmSeQI')
 
 bot.on('ready', () => {
 	bot.send('sendtextmessage', {
