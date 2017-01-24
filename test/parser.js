@@ -60,7 +60,5 @@ test('parser', (t) => {
 	}
 	t.deepEqual(input, out, 'unescaped properties')
 
-	t.fail('todo: multi line input loaded from file')
-
 	t.end()
 })
