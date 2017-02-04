@@ -4,7 +4,7 @@ let bot = new Cactus('pIqmSeQI')
 
 bot.on('ready', () => {
 	bot.send('sendtextmessage', {
-		target: 2,
+		target: 1,
 		targetmode: 1,
 		msg: "hello world"
 	}, (res) => {
