@@ -6,7 +6,7 @@ bot.on('ready', () => {
 	bot.send('sendtextmessage', {
 		target: 1,
 		targetmode: 1,
-		msg: "hello world"
+		msg: 'hello world'
 	}, (res) => {
 		console.log(res)
 	})

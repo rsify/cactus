@@ -55,7 +55,7 @@ test('parser', (t) => {
 		raw: string,
 		err: err,
 		body: {
-			channel_name: "lorem\\ipsum\/de amore	mi\nsenore"
+			channel_name: 'lorem\\ipsum\/de amore	mi\nsenore'
 		}
 	}
 	t.deepEqual(input, out, 'unescaped properties')

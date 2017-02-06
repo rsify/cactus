@@ -15,7 +15,7 @@ bot.on('ready', () => {
 	bot.send('sendtextmessage', {
 		target: 2,
 		targetmode: 1,
-		msg: "hello world"
+		msg: 'hello world'
 	}, (res) => {
 		console.log(res)
 		// { err: { id: '0', msg: 'ok' },

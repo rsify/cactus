@@ -16,7 +16,7 @@ test('builder', (t) => {
 	out = builder('clientlist', {}, ['topic', 'flags', 'voice'])
 	t.equal(out, 'clientlist -topic -flags -voice', 'command options')
 
-	out = builder('sendtextmessage', {targetmode: 2, target: 1, msg: "Hello World ! (triggered)"})
+	out = builder('sendtextmessage', {targetmode: 2, target: 1, msg: 'Hello World ! (triggered)'})
 	t.equal(out, 'sendtextmessage targetmode=2 target=1 msg=Hello\\sWorld\\s!\\s(triggered)', 'whitespace escaping')
 
 	message = String.fromCharCode(92, 47, 32, 124, 10, 13, 9, 11)
