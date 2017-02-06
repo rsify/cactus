@@ -1,8 +1,30 @@
 {
-  "name": "cactus",
-  "description": "simple teamspeak bot",
-  "author": "nikersify",
+  "name": "cactus-ts",
+  "description": "ts3 helper library for making cool bots",
+  "author": "nikersify <nikersify@nikerino.com>",
   "devDependencies": {
     "tape": "^4.6.3"
-  }
+  },
+  "version": "0.0.1",
+  "main": "lib/Cactus.js",
+  "dependencies": {
+    "tape": "^4.6.3"
+  },
+  "scripts": {
+    "test": "tape test/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nikersify/cactus.git"
+  },
+  "keywords": [
+    "ts3",
+    "teamspeak",
+    "team",
+    "speak",
+    "3",
+    "cactus",
+    "cactus-ts"
+  ],
+  "license": "MIT"
 }
