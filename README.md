@@ -2,6 +2,8 @@
 
 helper library for the TeamSpeak 3 [ServerQuery](http://media.teamspeak.com/ts3_literature/TeamSpeak%203%20Server%20Query%20Manual.pdf)
 
+[![travis](https://travis-ci.org/Nikersify/cactus.svg?branch=master)](https://travis-ci.org/Nikersify/cactus)
+
 # example
 
 ```javascript
