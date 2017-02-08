@@ -5,7 +5,7 @@
   "devDependencies": {
     "tape": "^4.6.3"
   },
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "lib/Cactus.js",
   "dependencies": {
     "tape": "^4.6.3"
