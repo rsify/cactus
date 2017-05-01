@@ -1,4 +1,4 @@
-# cactus
+# cactus [![npm](https://img.shields.io/npm/v/cactus-ts.svg)](https://www.npmjs.com/package/cactus-ts)
 
 helper library for the TeamSpeak 3 [ServerQuery](http://media.teamspeak.com/ts3_literature/TeamSpeak%203%20Server%20Query%20Manual.pdf)
 
